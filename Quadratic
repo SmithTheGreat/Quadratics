@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class Quadratic {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Choose from Quadratic(true) or Addition(false): ");
+        boolean choice = sc.nextBoolean();
+        if (choice == true) {
+            double[] x3 = quadratic(sc);
+            System.out.println("X1: "+x3[0]+", X2: "+x3[1]);
+        }
+        else {
+            System.out.println("X: "+addition_thingy(sc));
+        }
+    }
+    public static double[] quadratic (Scanner sc1){
+        System.out.print("Gib a value: ");
+            double a = sc1.nextDouble();
+        System.out.print("\nGib b value: ");
+            double b = sc1.nextDouble();
+        System.out.print("\nGib c value: ");
+            double c = sc1.nextDouble();        
+        double x1 = (-b+Math.sqrt(Math.pow((b), 2)-4*(a*c)))/(2*a);
+        double x2 = (-b-Math.sqrt(Math.pow((b), 2)-4*(a*c)))/(2*a);
+        double[] x3 = {x1,x2};
+        return x3;
+    }
+    
+    public static double addition_thingy(Scanner sc) {
+        System.out.print("Give the A value");
+             double a = sc.nextDouble();
+        System.out.print("Give the B value");
+             double b = sc.nextDouble();
+      return a+b;       
+    }
+    
+}
